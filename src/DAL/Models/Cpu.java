@@ -1,4 +1,4 @@
-/*
+package Models;/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -7,14 +7,14 @@
  *CpuId,CpuTypeID,CpuName,socket,powerConsuming
  * @author Milan
  */
-class Cpu {
+public class Cpu {
     public int CpuId;
     public int CpuTypeId;
     public String CpuName;
     public int socketTypeId;
-    public String powerConsuming;
+    public int powerConsuming;
 
-    public Cpu(int CpuId, int CpuTypeId, String CpuName, int socketTypeId, String powerConsuming) {
+    public Cpu(int CpuId, int CpuTypeId, String CpuName, int socketTypeId, int powerConsuming) {
         this.CpuId = CpuId;
         this.CpuTypeId = CpuTypeId;
         this.CpuName = CpuName;
@@ -54,11 +54,11 @@ class Cpu {
         this.socketTypeId = socketTypeId;
     }
 
-    public String getPowerConsuming() {
+    public int getPowerConsuming() {
         return powerConsuming;
     }
 
-    public void setPowerConsuming(String powerConsuming) {
+    public void setPowerConsuming(int powerConsuming) {
         this.powerConsuming = powerConsuming;
     }
    

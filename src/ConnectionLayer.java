@@ -1,3 +1,5 @@
+package Models;
+
 import com.mysql.cj.protocol.Resultset;
 import java.sql.*;
 import java.util.ArrayList;
@@ -56,7 +58,7 @@ public ArrayList<Cpu> getAllCPUs(){
                 var CpuTypeID = rs.getInt("CpuTypeID");
                 var CpuName = rs.getString("CpuName");
                 var socketTypeId = rs.getInt("socketTypeId");
-                var powerConsuming = rs.getString("powerConsuming");
+                var powerConsuming = rs.getInt("powerConsuming");
                 var AllCpu = new Cpu(CpuId,CpuTypeID,CpuName,socketTypeId,powerConsuming);
                 toReturn.add(AllCpu);
 
@@ -119,6 +121,7 @@ public ArrayList<Motherboard> getMotherboardsByCpu(Cpu cpu){
         return toReturn;
     
 }
+
 
 public ArrayList<RamMemoryGen> getMemoryGen(){
         var toReturn = new ArrayList<RamMemoryGen>();
@@ -237,9 +240,9 @@ public ArrayList<Psu> getPsu(){
             Statement stmt = conn.createStatement();
             ResultSet rs   = stmt.executeQuery("SELECT psuId,psuName,power FROM psu");
             while(rs.next()){
-                var psuId = rs.getInt("gpuId");
+                var psuId = rs.getInt("psuId");
                 var power= rs.getInt("power");
-                var psuName  = rs.getString("gpuName");
+                var psuName  = rs.getString("psuName");
                 var psu = new Psu(psuId, psuName, power);
                 toReturn.add(psu);
             }
@@ -254,27 +257,5 @@ public ArrayList<Psu> getPsu(){
         return toReturn;
     
 }    
-public ArrayList<Psu> getMinReqPsu(){
-     var toReturn = new ArrayList<Psu>();
-    
-    try{
-            Statement stmt = conn.createStatement();
-            ResultSet rs   = stmt.executeQuery("SELECT psuId,psuName,power FROM psu");
-            while(rs.next()){
-                var psuId = rs.getInt("gpuId");
-                var power= rs.getInt("power");
-                var psuName  = rs.getString("gpuName");
-                var psu = new Psu(psuId, psuName, power);
-                toReturn.add(psu);
-            }
-        }catch(SQLException e){
-            System.out.println("Error " + e.getMessage());
-        };
-    
-    
-        
-        
-    
-        return toReturn;  
-}
+
 }
