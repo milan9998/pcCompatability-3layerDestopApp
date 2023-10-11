@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="desktopApp">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/desktopApp.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
