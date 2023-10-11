@@ -32,7 +32,7 @@ public class NewJFrame extends javax.swing.JFrame {
     boolean mbdFirstTime = true;
     boolean ramFirstTime = true;
     boolean ssdFirstTime = true;
-    boolean psuFirstTime = true;
+
     
     public NewJFrame() {
 
